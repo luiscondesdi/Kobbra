@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This module implements a port of the kepler netty server using the
-sockets python module
+This module implements a port of fuse info server using gevent
 """
 from gevent import server,signal as gsignal
 import signal
