@@ -23,13 +23,11 @@ class Kobbra(object):
     def __init__(self):
         # Load/Generate configuration 
         self.managers = ManagerFactory()
-
         cfgman = self.managers.Config()
-        ConsoleLogger.currentlevel = int(cfgman.GetIni("loglevel"))
-
         dbman = self.managers.Database()
+
+        ConsoleLogger.currentlevel = int(cfgman.GetIni("loglevel"))        
         dbman.Connect(cfgman.GetIni("db.file"))
-        cfgman.TryReloadDb()
 
     def main(self):
         """

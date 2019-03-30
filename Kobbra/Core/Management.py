@@ -76,6 +76,7 @@ class DatabaseManager(object):
             if self.__db.emptydb:
                 cfgman = self.managers.Config()
                 self.__db.runscript(cfgman.GetIni("db.script"))
+            self.managers.Config().TryReloadDb()
 
     def Close(self):
         if self.__db != None:

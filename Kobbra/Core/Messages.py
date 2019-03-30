@@ -131,6 +131,7 @@ class Response(object):
         return msg
 
     def availbadges(self):
+        # TODO: Fix badges!!!
         msg = self.c.writeheader(229)
         msg += self.c.getint(0) #numbadges
         msg += self.c.getint(0) #badgeslot?
