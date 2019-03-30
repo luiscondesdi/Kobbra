@@ -14,6 +14,7 @@ class IniConfiguration(object):
             self.cfg = self.__load() # RAII!
         except IOError:
             self.store(self.__getconfigdefaults())
+            self.cfg = self.__load()
 
     def __load(self):
         """
@@ -50,7 +51,7 @@ class IniConfiguration(object):
         defcfg["loglevel"] = "5"
         defcfg["info.port"] = "12321"
         defcfg["mus.port"] = "12322"
-        defcfg["db.file"] = "Kobbra.db"
-        defcfg["db.script"] = "Kobbra.sql"
+        defcfg["db.file"] = "Kobbra/Kobbra.db"
+        defcfg["db.script"] = "Kobbra/Kobbra.sql"
         return defcfg
 
