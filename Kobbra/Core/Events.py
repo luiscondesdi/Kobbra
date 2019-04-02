@@ -20,7 +20,8 @@ class EventDispatcher(object):
         self.reqdict = {
             206:self.initcrypto,
             202:self.generatekey,
-            4:self.trylogin,          
+            4:self.trylogin,
+            756:self.trylogin,         
             7:self.getinfo,
             8:self.getcredits,
             16:self.userrooms,
@@ -31,7 +32,7 @@ class EventDispatcher(object):
             197:self.approvemail,
             43:self.register,
             29:self.createroom,
-            2002:"generatekey",
+            2002:self.generatekey,
             204:"sso"
 
         }
@@ -43,7 +44,7 @@ class EventDispatcher(object):
             257:self.res.sessionparams,
             8:self.res.availablesets,
             33:self.res.localisederror,
-            3:self.res.login,            
+            3:self.res.login,        
             5:self.res.userobject,
             6:self.res.creditbalance,
             229:self.res.availbadges,

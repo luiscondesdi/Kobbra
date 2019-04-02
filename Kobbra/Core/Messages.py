@@ -30,6 +30,8 @@ class Response(object):
         CRYPTO PARAMS (277) response 
         """
         msg = self.c.writeheader(277)
+        msg += self.c.VL64.encode(1)
+        msg += self.c.VL64.encode(0)
         msg += self.c.geteom()
         ConsoleLogger.log("DBG","ResponseEvent: " + msg.decode('utf-8'))
         return msg
